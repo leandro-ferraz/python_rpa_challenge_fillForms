@@ -13,7 +13,6 @@ class Browser:
 
             prefs = {
                 "download.prompt_for_download": False,
-                "download.default_directory": Config.DOWNLOAD_DIR,
                 "safebrowsing.enabled": True
             }
         
@@ -31,10 +30,7 @@ class Browser:
 
         path = ChromeDriverManager().install()
         print(path)
-        self.driver = webdriver.Chrome(
-                        service=Service(path),
-                        options=genererate_options()
-                     )
+        self.driver = webdriver.Chrome( service=Service(path), options=genererate_options() )
 
         self.driver.implicitly_wait(10)
         

@@ -1,5 +1,4 @@
 import pandas as pd
-
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
@@ -18,14 +17,13 @@ class Challenge_page:
         xpath_button_download = '//a[contains(normalize-space(.), "Download Excel")]'
         download_button = self.browser.find(By.XPATH, xpath_button_download)
         url_spreadsheet = download_button.get_attribute("href")
-        return pd.read_excel(url_spreadsheet)   
+        return pd.read_excel(url_spreadsheet)
     
     def start_challenge(self):
         xpath_button_start = '//button[normalize-space(.)="Start"]'
         self.browser.find(By.XPATH, xpath_button_start).click()
-        print('iniciando o desafio')
         
-    def submit_registration(self, df_people: pd.DataFrame):        
+    def submit_registration(self, dict_person: dict):
         xpath_company_name = '//div[label[normalize-space(.)="Company Name"]]//input'
         xpath_email = '//div[label[normalize-space(.)="Email"]]//input'
         xpath_last_name = '//div[label[normalize-space(.)="Last Name"]]//input'
@@ -35,31 +33,16 @@ class Challenge_page:
         xpath_phone_number = '//div[label[normalize-space(.)="Phone Number"]]//input'
         xpath_button_submit = '//input[@type="submit" and @value="Submit"]'
 
-        for _, row in df_people.iterrows():
-            self.browser.find(By.XPATH, xpath_company_name).send_keys(row['company name'])
-            self.browser.find(By.XPATH, xpath_email).send_keys(row['email'])
-            self.browser.find(By.XPATH, xpath_last_name).send_keys(row['last name'])
-            self.browser.find(By.XPATH, xpath_first_name).send_keys(row['first name'])
-            self.browser.find(By.XPATH, xpath_role_in_company).send_keys(row['role in company'])
-            self.browser.find(By.XPATH, xpath_address).send_keys(row['address'])
-            self.browser.find(By.XPATH, xpath_phone_number).send_keys(row['phone number'])
-            self.browser.find(By.XPATH, xpath_button_submit).click()
-            print(row)
-
-    
-        print("finalizou")
+        self.browser.find(By.XPATH, xpath_company_name).send_keys(dict_person['company name'])
+        self.browser.find(By.XPATH, xpath_email).send_keys(dict_person['email'])
+        self.browser.find(By.XPATH, xpath_last_name).send_keys(dict_person['last name'])
+        self.browser.find(By.XPATH, xpath_first_name).send_keys(dict_person['first name'])
+        self.browser.find(By.XPATH, xpath_role_in_company).send_keys(dict_person['role in company'])
+        self.browser.find(By.XPATH, xpath_address).send_keys(dict_person['address'])
+        self.browser.find(By.XPATH, xpath_phone_number).send_keys(dict_person['phone number'])
+        self.browser.find(By.XPATH, xpath_button_submit).click()
 
     @staticmethod
     def clean_column_names(df_people: pd.DataFrame) -> pd.DataFrame:
         df_people.columns = df_people.columns.str.strip().str.lower()
         return df_people
-
-"""
-            Company Name
-            Email
-            Last Name
-            First Name
-            Role in Company
-            Address
-            Phone Number
-"""
