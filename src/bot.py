@@ -1,7 +1,8 @@
 import logging
-from config import Config
-from browser import Browser
-from challenge_page import Challenge_page
+
+from src.config import Config
+from src.browser import Browser
+from src.challenge_page import Challenge_page
 
 
 class Bot():

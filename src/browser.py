@@ -1,10 +1,9 @@
+from tempfile import mkdtemp
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.remote.webelement import WebElement #import just for ilustrate a specific typehint (find method)
-
-from config import Config
 
 class Browser:
     def __init__(self):    
@@ -18,14 +17,11 @@ class Browser:
         
             options.add_experimental_option("prefs", prefs)
 
-
-            """
-            options.add_argument('--headless=new')  # Nova sintaxe do modo headless
-            """
-            options.add_argument('--no-sandbox') # Desativa o mecanismo de sandbox do Chrome, + performance e - segurança
-            options.add_argument('--disable-dev-shm-usage') #Evita problemas de memória compartilhada em ambientes com recursos limitados
-            options.add_argument('--disable-gpu')  # Necessário em alguns sistemas Windows
-            
+            options.add_argument('--headless=new')  # New sintax of headless mode
+            options.add_argument('--no-sandbox') # Disable sandbox from Chrome (+ power & - secure)
+            options.add_argument('--disable-dev-shm-usage') #Avoid memory troubles in enviromnent with limited resouse
+            options.add_argument('--disable-gpu')  # Necessy in a few windows OS
+            options.add_argument(f"--user-data-dir={mkdtemp(prefix="chrome_profile_")}")#Avoid 'already in use profile' troubles
             return options
 
         path = ChromeDriverManager().install()

@@ -1,6 +1,6 @@
 [![Build Status](https://img.shields.io/github/actions/workflow/status/leandro-ferraz/python_rpa_challenge_fillforms/ci.yml?branch=main)](https://github.com/leandro-ferraz/python_rpa_challenge_fillforms/actions)
 [![Python Version](https://img.shields.io/badge/python-%3E%3D3.12-blue)](https://www.python.org/)
-[![License](https://img.shields.io/github/license/leandro-ferraz/python_rpa_challenge_fillForms)](https://github.com/leandro-ferraz/python_rpa_challenge_fillForms/blob/main/LICENSE)
+[![License](https://img.shields.io/github/license/leandro-ferraz/python_rpa_challenge_fillForms)](https://github.com/leandro-ferraz/python_rpa_challenge_fillforms/blob/main/LICENSE)
 
 # RPA Challenge Automator
 
@@ -41,20 +41,20 @@ Automates the download and form-filling process for the [RPA Challenge](https://
 ## Installation
 
 ```bash
-# Clone the repository
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
+### Clone the repository
+git clone https://github.com/leandro-ferraz/python_rpa_challenge_fillforms.git
 cd YOUR_REPO
 
-# Create and activate a virtual environment
+### Create and activate a virtual environment
 python -m venv .venv
 
-#activate a virtual environment
-## macOS / Linux
+###activate a virtual environment
+#### macOS / Linux
 source .venv/bin/activate
-## Windows (PowerShell)
+#### Windows (PowerShell)
 .venv\Scripts\Activate.ps1
 
-# Install dependencies
+### Install dependencies
 pip install -r requirements.txt
 ```
 
@@ -74,7 +74,7 @@ Environment variables or CLI flags can override defaults:
 ## Usage
 
 ```bash
-python -m rpa_challenge --url https://www.rpachallenge.com/ --log-level DEBUG
+python -m src --url https://www.rpachallenge.com/ --log-level DEBUG
 ```
 
 ### Available CLI options

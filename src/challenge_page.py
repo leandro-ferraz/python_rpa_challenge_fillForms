@@ -6,7 +6,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement 
 
-from browser import Browser #import just for ilustrate a specific typehint (find method)
+from src.browser import Browser #import just for ilustrate a specific typehint (find method)
 
 
 class Challenge_page:

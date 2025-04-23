@@ -2,8 +2,8 @@ import argparse
 import logging
 import sys
 
-from config import Config
-from bot import Bot
+from src.config import Config
+from src.bot import Bot
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Executor do RPA Challenge")
