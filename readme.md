@@ -6,6 +6,8 @@
 
 Automates the download and form-filling process for the [RPA Challenge](https://www.rpachallenge.com/) using **Selenium**, **Pandas**, and is packaged in a **Docker** container for easy deployment.
 
+In this challenge, form fields can shift positions between sessions and use dynamic selectors, and there is an input spreadsheet with a column header that isn’t handled in the default dataset, requiring robust locator strategies and flexible data mapping.
+
 ---
 
 ## Table of Contents
