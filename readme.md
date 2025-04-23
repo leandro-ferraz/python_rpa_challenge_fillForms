@@ -96,17 +96,14 @@ python -m rpa_challenge   --url https://www.rpachallenge.com/   --download-dir .
 ├── README.md
 ├── requirements.txt
 └── src/
-    └── rpa_challenge/
-        ├── __init__.py
-        ├── config.py
-        ├── core/
-        │   └── browser.py
-        ├── pages/
-        │   └── challenge_page.py
-        ├── tasks/
-        │   └── rpa_challenge_task.py
-        ├── main.py
-        └── __main__.py
+    ├── rpa_challenge/
+    ├── __init__.py
+    ├── config.py
+    ├── browser.py
+    ├── challenge_page.py
+    ├── bot.py
+    ├── main.py
+    └── __main__.py
 ```
 
 ---
