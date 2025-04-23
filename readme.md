@@ -1,6 +1,6 @@
 [![Build Status](https://img.shields.io/github/actions/workflow/status/YOUR_USERNAME/YOUR_REPO/ci.yml?branch=main)](https://github.com/YOUR_USERNAME/YOUR_REPO/actions)
-[![Python Version](https://img.shields.io/pypi/pyversions/your-package)](https://www.python.org/)
-[![License](https://img.shields.io/github/license/YOUR_USERNAME/YOUR_REPO)](LICENSE)
+[![Python Version](https://img.shields.io/badge/python-%3E%3D3.12-blue)](https://www.python.org/)
+[![License](https://img.shields.io/github/license/leandro-ferraz/python_rpa_challenge_fillForms)](https://github.com/leandro-ferraz/python_rpa_challenge_fillForms/blob/main/LICENSE)
 
 # RPA Challenge Automator
 
@@ -32,7 +32,7 @@ Automates the download and form-filling process for the [RPA Challenge](https://
 
 ## Prerequisites
 
-- **Python** ≥ 3.10  
+- **Python** ≥ 3.12  
 - **Google Chrome** (compatible with ChromeDriver)  
 - Internet connection to download ChromeDriver (handled by `webdriver_manager`)  
 
